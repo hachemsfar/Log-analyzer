@@ -23,9 +23,8 @@ def upload_logs():
     uploaded_file = st.file_uploader("Upload Log File", type=["txt"])
     if uploaded_file is not None:
         file_contents = uploaded_file.read()
-        st.write(file_contents)
         logs = []
-        for line in uploaded_file:
+        for line in file_contents.decode("utf-8").split("\n"):
             if line:
                 level, timestamp, message = line.split("\t")
                 logs.append(Log(level, timestamp, message))
