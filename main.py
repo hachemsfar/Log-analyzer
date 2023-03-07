@@ -22,7 +22,7 @@ class Log:
 def upload_logs():
     uploaded_file = st.file_uploader("Upload Log File", type=["txt"])
     if uploaded_file is not None:
-        file_contents = uploaded_file.read()
+        file_contents = uploaded_file.read('rb')
         logs = []
         for line in file_contents.split("\n"):
             if line:
