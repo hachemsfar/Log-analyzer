@@ -30,7 +30,6 @@ def upload_logs():
                 message=line[len('2023-02-20 11:30:39'):]
                 level=message[4:9]
                 message=message[9:]
-                st.write(level)
                 logs.append(Log(level,timestamp, message))
         return logs
 
