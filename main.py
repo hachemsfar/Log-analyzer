@@ -28,8 +28,8 @@ def upload_logs():
             if line:
                 timestamp = line[:len('2023-02-20 11:30:39')]
                 message=line[len('2023-02-20 11:30:39'):]
-                level=message[4:8]
-                message=message[8:]
+                level=message[4:9]
+                message=message[9:]
                 st.write(level)
                 logs.append(Log(level,timestamp, message))
         return logs
