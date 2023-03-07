@@ -28,9 +28,9 @@ def upload_logs():
             if line:
                 try:
                     timestamp, message = line.split(",")
+                    logs.append(Log(timestamp, message))
                 except:
                     pass
-                logs.append(Log(timestamp, message))
         return logs
 
 # Define your main function for the Streamlit app
