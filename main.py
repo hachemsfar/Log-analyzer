@@ -26,8 +26,11 @@ def upload_logs():
         logs = []
         for line in file_contents.decode("utf-8").split("\n"):
             if line:
-                level, timestamp, message = line.split(",")
-                logs.append(Log(level, timestamp, message))
+                try:
+                    timestamp, message = line.split(",")
+                except:
+                    pass
+                logs.append(Log(timestamp, message))
         return logs
 
 # Define your main function for the Streamlit app
