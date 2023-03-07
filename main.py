@@ -23,6 +23,7 @@ def upload_logs():
     uploaded_file = st.file_uploader("Upload Log File", type=["txt"])
     if uploaded_file is not None:
         file_contents = uploaded_file.read()
+        st.write(file_contents)
         logs = []
         for line in uploaded_file:
             if line:
