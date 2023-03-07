@@ -39,7 +39,7 @@ def main():
 
     # Upload logs
     logs = upload_logs()
-
+    st.write(logs)
     # Filter logs
     level = st.selectbox("Filter by Level", ["", "DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"])
     keyword = st.text_input("Filter by Keyword")
