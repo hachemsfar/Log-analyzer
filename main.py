@@ -26,7 +26,8 @@ def upload_logs():
         logs = []
         for line in file_contents.decode("utf-8").split("\n"):
             if line:
-                timestamp, message = line.split(",")
+                timestamp = line[:len('2023-02-20 11:30:39')]
+                message=line[len('2023-02-20 11:30:39'):]
                 level=message[4:8]
                 message=message[8:]
                 logs.append(Log(level,timestamp, message))
